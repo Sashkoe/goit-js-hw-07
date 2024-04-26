@@ -63,15 +63,15 @@ const images = [
   },
 ];
 
-const galleryList = document.querySelector('.gallery');
+const gallery = document.querySelector('.gallery');
 
-const galleryItems = images.map(image => {
-  const listItem = document.createElement('li');
-  const imageElem = document.createElement('img');
-  imageElem.src = image.url;
-  imageElem.alt = image.alt;
-  listItem.appendChild(imageElem);
-  return listItem;
-});
+const galleryItem = images
+  .map((item) => {
+    return `
+      <li class="gallery-item">
+        <img src="${item.url}" alt="${item.alt}">
+      </li>`;
+  })
+  .join('');
 
-galleryList.append(...galleryItems);
+gallery.insertAdjacentHTML('beforeend', galleryItem);
