@@ -28,4 +28,4 @@ function destroyBoxes(){
   boxContainer.innerHTML = '';
 }
 createButton.addEventListener(`click`, createBoxes);
-destroyButton.addEventListener(`click`, destroyBoxes);
+destroyButton.addEventListener(`click`, destroyBoxesBoxes);
