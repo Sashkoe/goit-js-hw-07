@@ -5,7 +5,7 @@ function eventFrom() {
     const nameInputValue = nameInput.value.trim();
 
     if(nameInput === "") {
-        name.nameOutput.textContent = "Anonymous";
+        nameOutput.textContent = "Anonymous";
     }
     else  {
     nameOutput.textContent = nameInputValue;
