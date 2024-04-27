@@ -21,6 +21,6 @@ passwordInput.setAttribute('placeholder', 'type area');
 function placeholderOff(){
     passwordInput.setAttribute('placeholder', '');
 }
-LoginForm.addEventListener("sumbit", "funEvent");
+LoginForm.addEventListener("submit", funEvent);;
 passwordInput.addEventListener("click", "placeholderActive");
-passwordInput.addEventListener("blue"," placeholderOff");
+passwordInput.addEventListener("blur"," placeholderOff");
