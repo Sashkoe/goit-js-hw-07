@@ -1,21 +1,35 @@
-const form = document.querySelector(".login-form");
+const loginForm = document.querySelector(".login-form");
 
-const submitHandler = (event) => {
-  event.preventDefault();
-  const elements = event.currentTarget.elements;
-  if (
-    elements.email.value.trim() === "" ||
-    elements.password.value.trim() === ""
-  ) {
-    alert("All form fields must be filled in");
-  } else {
-    const formData = {
-      email: elements.email.value.trim(),
-      password: elements.password.value.trim(),
+function funEvent(event) {
+    event.preventDefault();
+
+    const formElem = event.currentTarget.elements;
+
+    const formObj = {
+        email: formElem.email.value.trim(),
+        password: formElem.password.value.trim(),
     };
-    console.log(formData);
-  }
-  form.reset();
-};
+    
+    if (formObj.email && formObj.password) {
+        console.log(formObj);
+        
+        loginForm.reset();
+    }
+    else {
+        alert("All form fields must be filled in");        
+    }
+}
 
-form.addEventListener("submit", submitHandler);
+const passwordInput = loginForm.elements[1];
+
+function placeholderActive() {
+passwordInput.setAttribute('placeholder', 'Type area');  
+}
+
+function placeholderOff() {
+passwordInput.setAttribute('placeholder', '');  
+}
+
+loginForm.addEventListener("submit", funEvent)
+passwordInput.addEventListener("click", placeholderActive);
+passwordInput.addEventListener("blur", placeholderOff);
